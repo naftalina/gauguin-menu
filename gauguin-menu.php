@@ -2,8 +2,8 @@
 /**
  * Plugin Name: Gauguin Menu
  * Plugin URI: https://gauguin.it
- * Description: Menu digitale di Gauguin Pizzeria Birreria (per QR code). App standalone servita su una pagina del sito, indipendente da Replit.
- * Version: 1.0.0
+ * Description: Menu digitale di Gauguin Pizzeria Birreria (per QR code). Web-app del menù servita su una pagina del sito, con pannello prezzi/disponibilità.
+ * Version: 1.1.0
  * Author: Gauguin
  * Text Domain: gauguin-menu
  * Requires PHP: 7.4
@@ -11,7 +11,7 @@
 
 if (!defined('ABSPATH')) exit;
 
-define('GXM_VERSION', '1.0.0');
+define('GXM_VERSION', '1.1.0');
 define('GXM_FILE', __FILE__);
 define('GXM_DIR', plugin_dir_path(__FILE__));
 define('GXM_URL', plugin_dir_url(__FILE__));
@@ -29,13 +29,19 @@ $gxmUpdateChecker = YahnisElsts\PluginUpdateChecker\v5\PucFactory::buildUpdateCh
     'gauguin-menu'
 );
 
+require_once GXM_DIR . 'includes/class-admin.php';
+require_once GXM_DIR . 'includes/class-rest.php';
 require_once GXM_DIR . 'includes/class-template.php';
 
 /**
  * Bootstrap.
  */
 function gxm_boot() {
+    GXM_Rest::instance();
     GXM_Template::instance();
+    if (is_admin()) {
+        GXM_Admin::instance();
+    }
 }
 add_action('plugins_loaded', 'gxm_boot');
 

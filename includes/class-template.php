@@ -4,8 +4,7 @@ if (!defined('ABSPATH')) exit;
 /**
  * Registra un template di pagina ("Gauguin Menu") selezionabile dall'editor
  * di WordPress e, per le pagine che lo usano, serve l'app del menù compilata
- * (client React statico) come documento standalone — clone esatto della
- * versione Replit, senza header/footer del tema.
+ * (client React statico) come documento standalone, senza header/footer del tema.
  */
 class GXM_Template {
 
@@ -49,6 +48,12 @@ class GXM_Template {
         if ($real_base !== GXM_BUILD_BASE) {
             $html = str_replace(GXM_BUILD_BASE, $real_base, $html);
         }
+
+        // Inietta l'URL REST degli override (prezzi/esaurito) prima dell'app.
+        $inline = '<script>window.GXM_OVERRIDES_URL=' .
+            wp_json_encode(esc_url_raw(rest_url('gauguin-menu/v1/overrides'))) .
+            ';</script>';
+        $html = str_replace('<div id="root"></div>', $inline . '<div id="root"></div>', $html);
 
         header('Content-Type: text/html; charset=utf-8');
         echo $html;
