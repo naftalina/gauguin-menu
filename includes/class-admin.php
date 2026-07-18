@@ -119,18 +119,26 @@ class GXM_Admin {
                             if (!empty($it['isHeader'])) continue;
                             $id = (string) $it['id'];
                             $o = isset($ov[$id]) ? $ov[$id] : [];
-                            $has_unit = ($it['priceUnit'] !== '');
-                            $base_price = $has_unit ? $it['priceUnit'] : ($it['price'] !== '' ? $it['price'] . ' €' : '—');
+                            // Un piatto è modificabile se ha un prezzo unitario numerico,
+                            // anche con un'etichetta (es. tagliate "all'etto", arrosticini "cad.",
+                            // vini "bottiglia"). Non modificabili solo le birre, che hanno l'intero
+                            // listino scritto nel testo (price vuoto, formato "0,25L · 3,50€ | ...").
+                            $has_price = ($it['price'] !== '');
+                            $unit_suffix = ($it['priceUnit'] !== '') ? ' ' . $it['priceUnit'] : '';
+                            $base_price = $has_price
+                                ? ($it['price'] . ' €' . $unit_suffix)
+                                : ($it['priceUnit'] !== '' ? $it['priceUnit'] : '—');
                             $has_maxi = ($it['priceMaxi'] !== '');
                         ?>
                             <tr>
                                 <td><?php echo esc_html($it['name']); ?></td>
                                 <td style="color:#666"><?php echo esc_html($base_price); ?></td>
                                 <td>
-                                    <?php if ($has_unit): ?>
-                                        <span style="color:#999;font-size:12px">taglie multiple</span>
-                                    <?php else: ?>
+                                    <?php if ($has_price): ?>
                                         <input type="text" name="price[<?php echo esc_attr($id); ?>]" value="<?php echo esc_attr(isset($o['price']) ? $o['price'] : ''); ?>" placeholder="es. 9.50" style="width:90px" inputmode="decimal">
+                                        <?php if ($unit_suffix !== ''): ?><span style="color:#999;font-size:12px"><?php echo esc_html($unit_suffix); ?></span><?php endif; ?>
+                                    <?php else: ?>
+                                        <span style="color:#999;font-size:12px">prezzi nel testo</span>
                                     <?php endif; ?>
                                 </td>
                                 <td>
