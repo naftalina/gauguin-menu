@@ -49,6 +49,17 @@ class GXM_Template {
             $html = str_replace(GXM_BUILD_BASE, $real_base, $html);
         }
 
+        // Cache-busting degli asset con `?v=<versione>`: così NON serve più
+        // rinominare i file del bundle ad ogni release. Rinominarli è stato un
+        // errore: le pagine full-page-cachate (WP Fastest Cache) puntavano al
+        // vecchio nome ormai cancellato → 404 sul JS → pagina bianca. I nomi
+        // file restano stabili, è la query a forzare l'aggiornamento del browser.
+        $html = str_replace(
+            ['.js"', '.css"'],
+            ['.js?v=' . GXM_VERSION . '"', '.css?v=' . GXM_VERSION . '"'],
+            $html
+        );
+
         // Inietta l'URL REST degli override (prezzi/esaurito) prima dell'app.
         $inline = '<script>window.GXM_OVERRIDES_URL=' .
             wp_json_encode(esc_url_raw(rest_url('gauguin-menu/v1/overrides'))) .
@@ -59,6 +70,12 @@ class GXM_Template {
         $inline .= $this->anniv_promo();
         $html = str_replace('<div id="root"></div>', $inline . '<div id="root"></div>', $html);
 
+        // La pagina è renderizzata al volo (promo/override dinamici): NON deve
+        // essere messa in full-page cache, altrimenti può servire riferimenti
+        // agli asset ormai stale. Best-effort verso i plugin di cache. La regola
+        // definitiva resta escludere /menu/ nelle impostazioni di WP Fastest Cache.
+        if (!defined('DONOTCACHEPAGE')) define('DONOTCACHEPAGE', true);
+        nocache_headers();
         header('Content-Type: text/html; charset=utf-8');
         echo $html;
         exit;
