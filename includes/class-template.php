@@ -87,7 +87,7 @@ class GXM_Template {
 @media(prefers-reduced-motion:reduce){.gxm-fab{animation:none}}
 </style>
 <div class="gxm-anniv" id="gxm-anniv">
-  <span>🎉 <strong>Gauguin compie 30 anni</strong> · 2 novembre<span class="gxm-anniv-cd" id="gxm-anniv-cd"></span></span>
+  <span>🎉 <strong>Gauguin compie 30 anni</strong> · festeggia con noi il 2 novembre<span class="gxm-anniv-cd" id="gxm-anniv-cd"></span></span>
   <a class="gxm-anniv-cta" href="<?php echo $url; ?>">Lascia il tuo ricordo</a>
 </div>
 <a class="gxm-fab" id="gxm-fab" href="<?php echo $url; ?>" aria-label="Lascia il tuo ricordo per i 30 anni del Gauguin">✍️ Lascia un ricordo</a>
