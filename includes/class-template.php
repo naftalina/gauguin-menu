@@ -53,10 +53,60 @@ class GXM_Template {
         $inline = '<script>window.GXM_OVERRIDES_URL=' .
             wp_json_encode(esc_url_raw(rest_url('gauguin-menu/v1/overrides'))) .
             ';</script>';
+        // Promo 30 anni: nastro in cima + bottone flottante che portano al
+        // form dei ricordi sulla landing (home). Iniettati fuori da #root, così
+        // non serve ricompilare l'app React. Vedi plugin gauguin-30anni.
+        $inline .= $this->anniv_promo();
         $html = str_replace('<div id="root"></div>', $inline . '<div id="root"></div>', $html);
 
         header('Content-Type: text/html; charset=utf-8');
         echo $html;
         exit;
+    }
+
+    /**
+     * Promo "30 anni": nastro in cima al menù + bottone flottante, entrambi
+     * verso il form dei ricordi sulla landing (home, #gx-form). Un piccolo
+     * JS calcola i giorni mancanti al 2 novembre 2026 e nasconde tutto dopo
+     * l'evento. Solo IT (pubblico locale), mobile-first, palette bordeaux.
+     */
+    private function anniv_promo() {
+        $url = esc_url(home_url('/')) . '#gx-form';
+        ob_start();
+        ?>
+<style id="gxm-anniv-css">
+.gxm-anniv{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px 12px;padding:9px 14px;background:linear-gradient(135deg,#8C172A,#6E1120);color:#FBF4E6;font-family:'Inter',system-ui,-apple-system,sans-serif;font-size:14px;line-height:1.3;text-align:center;position:relative;z-index:5}
+.gxm-anniv strong{font-weight:700}
+.gxm-anniv-cd{opacity:.92;font-weight:600}
+.gxm-anniv-cta{display:inline-block;background:#FBF4E6;color:#8C172A;font-weight:700;text-decoration:none;padding:6px 14px;border-radius:999px;white-space:nowrap;font-size:13px}
+.gxm-anniv-cta:active{transform:translateY(1px)}
+.gxm-fab{position:fixed;right:14px;bottom:calc(14px + env(safe-area-inset-bottom,0px));z-index:9999;display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,#8C172A,#6E1120);color:#FBF4E6;font-family:'Inter',system-ui,-apple-system,sans-serif;font-weight:700;font-size:14px;text-decoration:none;padding:11px 16px;border-radius:999px;box-shadow:0 6px 18px rgba(0,0,0,.28);border:1.5px solid rgba(251,244,230,.35)}
+.gxm-fab:active{transform:translateY(1px)}
+@media(min-width:600px){.gxm-anniv{font-size:15px}}
+</style>
+<div class="gxm-anniv" id="gxm-anniv">
+  <span>🎉 <strong>Gauguin compie 30 anni</strong> · 2 novembre<span class="gxm-anniv-cd" id="gxm-anniv-cd"></span></span>
+  <a class="gxm-anniv-cta" href="<?php echo $url; ?>">Lascia il tuo ricordo</a>
+</div>
+<a class="gxm-fab" id="gxm-fab" href="<?php echo $url; ?>" aria-label="Lascia il tuo ricordo per i 30 anni del Gauguin">✍️ Il tuo ricordo</a>
+<script>
+(function(){
+  var target=new Date(2026,10,2,19,0,0);      // 2 nov 2026, 19:00
+  var hideAfter=new Date(2026,10,3,0,0,0);     // sparisce dal 3 novembre
+  var now=new Date();
+  var bar=document.getElementById('gxm-anniv');
+  var fab=document.getElementById('gxm-fab');
+  var cd=document.getElementById('gxm-anniv-cd');
+  if(now>=hideAfter){ if(bar)bar.style.display='none'; if(fab)fab.style.display='none'; return; }
+  if(cd){
+    var days=Math.ceil((target-now)/86400000);
+    if(days>1) cd.textContent=' · tra '+days+' giorni';
+    else if(days===1) cd.textContent=' · è domani!';
+    else cd.textContent=' · è oggi! 🎉';
+  }
+})();
+</script>
+<?php
+        return ob_get_clean();
     }
 }
