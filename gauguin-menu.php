@@ -3,7 +3,7 @@
  * Plugin Name: Gauguin Menu
  * Plugin URI: https://gauguin.it
  * Description: Menu digitale di Gauguin Pizzeria Birreria (per QR code). Web-app del menù servita su una pagina del sito, con pannello prezzi/disponibilità.
- * Version: 1.1.7
+ * Version: 1.1.8
  * Author: Gauguin
  * Text Domain: gauguin-menu
  * Requires PHP: 7.4
@@ -11,7 +11,7 @@
 
 if (!defined('ABSPATH')) exit;
 
-define('GXM_VERSION', '1.1.7');
+define('GXM_VERSION', '1.1.8');
 define('GXM_FILE', __FILE__);
 define('GXM_DIR', plugin_dir_path(__FILE__));
 define('GXM_URL', plugin_dir_url(__FILE__));
