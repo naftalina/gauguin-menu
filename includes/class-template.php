@@ -60,6 +60,20 @@ class GXM_Template {
             $html
         );
 
+        // L'index.html del build e' statico e non conosce l'URL della pagina:
+        // canonical e og:url/og:image li aggiungo qui, altrimenti i crawler
+        // (e le anteprime social) non sanno a quale indirizzo appartiene il menu.
+        $page_url = get_permalink(get_queried_object_id());
+        if ($page_url) {
+            $head  = '<link rel="canonical" href="' . esc_url($page_url) . '">' . "\n";
+            $head .= '<meta property="og:url" content="' . esc_url($page_url) . '">' . "\n";
+            if (function_exists('get_site_icon_url') && get_site_icon_url()) {
+                $head .= '<meta property="og:image" content="' . esc_url(get_site_icon_url()) . '">' . "\n";
+            }
+            $head .= '<meta name="twitter:card" content="summary_large_image">' . "\n";
+            $html = str_replace('</head>', $head . '</head>', $html);
+        }
+
         // Inietta l'URL REST degli override (prezzi/esaurito) prima dell'app.
         $inline = '<script>window.GXM_OVERRIDES_URL=' .
             wp_json_encode(esc_url_raw(rest_url('gauguin-menu/v1/overrides'))) .
@@ -68,6 +82,11 @@ class GXM_Template {
         // form dei ricordi sulla landing (home). Iniettati fuori da #root, così
         // non serve ricompilare l'app React. Vedi plugin gauguin-30anni.
         $inline .= $this->anniv_promo();
+        // GEO / dati strutturati: il menù in JSON-LD (schema.org Menu) piu' una
+        // copia testuale in <noscript>. Senza questi, per un crawler che non
+        // esegue JavaScript la pagina era solo un <div id="root"> vuoto.
+        $inline .= $this->menu_jsonld();
+        $inline .= $this->menu_noscript();
         $html = str_replace('<div id="root"></div>', $inline . '<div id="root"></div>', $html);
 
         // La pagina è renderizzata al volo (promo/override dinamici): NON deve
@@ -128,4 +147,161 @@ class GXM_Template {
 <?php
         return ob_get_clean();
     }
+    /**
+     * Menù completo (categorie + voci) con gli override del pannello prezzi
+     * già applicati. Stessa fonte dati che usa il client React, così il testo
+     * servito ai crawler non può divergere da quello che vede l'utente.
+     */
+    private function menu_data() {
+        $raw = @file_get_contents(GXM_DIR . 'menu-index.json');
+        if ($raw === false) return [];
+        $cats = json_decode($raw, true);
+        if (!is_array($cats)) return [];
+
+        $ov = get_option('gxm_overrides', []);
+        if (!is_array($ov)) $ov = [];
+
+        foreach ($cats as &$cat) {
+            if (empty($cat['items']) || !is_array($cat['items'])) continue;
+            foreach ($cat['items'] as &$it) {
+                $id = (string) ($it['id'] ?? '');
+                if ($id === '' || empty($ov[$id]) || !is_array($ov[$id])) continue;
+                $o = $ov[$id];
+                if (isset($o['price']) && $o['price'] !== '')     $it['price']     = $o['price'];
+                if (isset($o['priceMaxi']) && $o['priceMaxi'] !== '') $it['priceMaxi'] = $o['priceMaxi'];
+                $it['soldOut'] = !empty($o['soldOut']);
+            }
+            unset($it);
+        }
+        unset($cat);
+        return $cats;
+    }
+
+    /** "10.00" => "10,00 €" (formato italiano, come nel client). */
+    private function fmt_price($v) {
+        $v = trim((string) $v);
+        if ($v === '' || !is_numeric($v)) return '';
+        return number_format((float) $v, 2, ',', '.') . ' €';
+    }
+
+    /**
+     * JSON-LD schema.org "Menu": è il canale che leggono davvero i motori
+     * generativi (ChatGPT, Perplexity, Google AI Overviews) e le rich card di
+     * Google. Prima di questo, per un crawler la pagina /menu/ era un
+     * <div id="root"></div> vuoto: 184 piatti che non esistevano.
+     */
+    private function menu_jsonld() {
+        $cats = $this->menu_data();
+        if (!$cats) return '';
+
+        $sections = [];
+        foreach ($cats as $cat) {
+            if (empty($cat['items']) || !is_array($cat['items'])) continue;
+
+            $items = [];
+            foreach ($cat['items'] as $it) {
+                // Le righe "isHeader" sono separatori grafici, non piatti.
+                if (!empty($it['isHeader'])) continue;
+                $name = trim((string) ($it['name'] ?? ''));
+                if ($name === '') continue;
+
+                $entry = ['@type' => 'MenuItem', 'name' => $name];
+
+                $offers = [];
+                $price = trim((string) ($it['price'] ?? ''));
+                if (is_numeric($price)) {
+                    $offer = [
+                        '@type'        => 'Offer',
+                        'price'        => number_format((float) $price, 2, '.', ''),
+                        'priceCurrency'=> 'EUR',
+                    ];
+                    // priceUnit ("cad.") = il prezzo è al pezzo, non a porzione.
+                    $unit = trim((string) ($it['priceUnit'] ?? ''));
+                    if ($unit !== '') $offer['description'] = $unit;
+                    if (!empty($it['soldOut'])) {
+                        $offer['availability'] = 'https://schema.org/SoldOut';
+                    }
+                    $offers[] = $offer;
+                }
+                // Formato maxi (pizze): seconda Offer, non un piatto separato.
+                $maxi = trim((string) ($it['priceMaxi'] ?? ''));
+                if (is_numeric($maxi)) {
+                    $offers[] = [
+                        '@type'        => 'Offer',
+                        'name'         => 'Maxi',
+                        'price'        => number_format((float) $maxi, 2, '.', ''),
+                        'priceCurrency'=> 'EUR',
+                    ];
+                }
+                if ($offers) $entry['offers'] = count($offers) === 1 ? $offers[0] : $offers;
+
+                $items[] = $entry;
+            }
+            if (!$items) continue;
+
+            $sections[] = [
+                '@type'          => 'MenuSection',
+                'name'           => (string) ($cat['name'] ?? ''),
+                'hasMenuItem'    => $items,
+            ];
+        }
+        if (!$sections) return '';
+
+        $schema = [
+            '@context'    => 'https://schema.org',
+            '@type'       => 'Menu',
+            '@id'         => home_url('/menu/#menu'),
+            'name'        => 'Menu Gauguin Pizzeria Birreria',
+            'inLanguage'  => 'it-IT',
+            'url'         => get_permalink(get_queried_object_id()),
+            // Ricollega il menù alla scheda Restaurant emessa dal plugin 30 anni.
+            'isPartOf'    => ['@type' => 'Restaurant', '@id' => home_url('/#restaurant')],
+            'hasMenuSection' => $sections,
+        ];
+
+        return "\n" . '<script type="application/ld+json">'
+            . wp_json_encode($schema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE)
+            . '</script>' . "\n";
+    }
+
+    /**
+     * Copia testuale del menù dentro <noscript>. Serve a chi naviga senza JS e
+     * ai crawler che non eseguono JavaScript. Volutamente in <noscript> e non
+     * dentro #root: iniettarlo nel contenitore di React farebbe lampeggiare il
+     * menù grezzo prima del mount, e il 90% del traffico è da smartphone.
+     */
+    private function menu_noscript() {
+        $cats = $this->menu_data();
+        if (!$cats) return '';
+
+        $out  = '<noscript><div class="gxm-nojs">';
+        $out .= '<h1>Menu Gauguin Pizzeria Birreria — Alba Adriatica</h1>';
+        foreach ($cats as $cat) {
+            if (empty($cat['items']) || !is_array($cat['items'])) continue;
+            $out .= '<h2>' . esc_html((string) ($cat['name'] ?? '')) . '</h2><ul>';
+            foreach ($cat['items'] as $it) {
+                $name = trim((string) ($it['name'] ?? ''));
+                if ($name === '') continue;
+                if (!empty($it['isHeader'])) {
+                    $out .= '<li><strong>' . esc_html($name) . '</strong></li>';
+                    continue;
+                }
+                $line  = esc_html($name);
+                $price = $this->fmt_price($it['price'] ?? '');
+                $maxi  = $this->fmt_price($it['priceMaxi'] ?? '');
+                $unit  = trim((string) ($it['priceUnit'] ?? ''));
+                if ($price !== '') {
+                    $line .= ' — ' . esc_html($price);
+                    if ($unit !== '') $line .= ' ' . esc_html($unit);
+                }
+                if ($maxi !== '') $line .= ' (maxi ' . esc_html($maxi) . ')';
+                if (!empty($it['soldOut'])) $line .= ' — esaurito';
+                $out .= '<li>' . $line . '</li>';
+            }
+            $out .= '</ul>';
+        }
+        $out .= '</div></noscript>';
+        return $out;
+    }
+
 }
