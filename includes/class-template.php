@@ -78,6 +78,9 @@ class GXM_Template {
         $inline = '<script>window.GXM_OVERRIDES_URL=' .
             wp_json_encode(esc_url_raw(rest_url('gauguin-menu/v1/overrides'))) .
             ';</script>';
+        // Avviso ferie: date e testo arrivano dal plugin ordini (pannello
+        // Impostazioni → Ferie), unica fonte per sito, ordini e menu.
+        $inline .= $this->vacation_notice();
         // Promo 30 anni: nastro in cima + bottone flottante che portano al
         // form dei ricordi sulla landing (home). Iniettati fuori da #root, così
         // non serve ricompilare l'app React. Vedi plugin gauguin-30anni.
@@ -98,6 +101,38 @@ class GXM_Template {
         header('Content-Type: text/html; charset=utf-8');
         echo $html;
         exit;
+    }
+
+    /**
+     * Avviso "chiusi per ferie" in cima al menù, se il plugin ordini ne ha uno
+     * attivo. Lo script lo toglie dopo l'ultimo giorno di ferie anche se la
+     * pagina arrivasse da una cache vecchia.
+     */
+    private function vacation_notice() {
+        if (!function_exists('gauguin_vacation_notice')) return '';
+        $n = gauguin_vacation_notice();
+        if (!$n) return '';
+        ob_start();
+        ?>
+<style id="gxm-vac-css">
+.gxm-vac{padding:14px 18px;background:#6E1120;color:#FBF4E6;font-family:'Inter',system-ui,-apple-system,sans-serif;text-align:center;line-height:1.4;position:relative;z-index:7;border-bottom:3px solid #E0A128}
+.gxm-vac-title{font-size:17px;font-weight:800;color:#F4C862;margin:0 0 3px}
+.gxm-vac-text{font-size:14px;max-width:560px;margin:0 auto}
+</style>
+<div class="gxm-vac" id="gxm-vac" role="status">
+  <div class="gxm-vac-title"><?php echo esc_html($n['title']); ?></div>
+  <div class="gxm-vac-text"><?php echo esc_html($n['text']); ?></div>
+</div>
+<script>
+(function(){
+  var d=new Date(),p=function(n){return(n<10?'0':'')+n};
+  if(d.getFullYear()+'-'+p(d.getMonth()+1)+'-'+p(d.getDate())><?php echo wp_json_encode($n['to']); ?>){
+    var e=document.getElementById('gxm-vac'); if(e) e.remove();
+  }
+})();
+</script>
+<?php
+        return ob_get_clean();
     }
 
     /**
