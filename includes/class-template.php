@@ -90,6 +90,19 @@ class GXM_Template {
         // esegue JavaScript la pagina era solo un <div id="root"> vuoto.
         $inline .= $this->menu_jsonld();
         $inline .= $this->menu_noscript();
+        // Link diretti a una categoria (/menu/#category-birre, dalla home): la
+        // sezione la disegna React dopo il caricamento, quindi il browser non
+        // la trova e resta in cima. Aspettiamo la sezione e ci scorriamo con lo
+        // stesso scarto (80px, barra categorie) dei pulsanti del menu.
+        $inline .= '<script>(function(){var h=location.hash;'
+            . 'if(!/^#category-[a-z0-9-]+$/.test(h))return;'
+            . 'if("scrollRestoration" in history)history.scrollRestoration="manual";'
+            . 'var id=h.slice(1),t0=Date.now();'
+            . 'function y(e){return e.getBoundingClientRect().top+window.scrollY-80;}'
+            . 'function go(){var e=document.getElementById(id);'
+            . 'if(!e){if(Date.now()-t0<6000)setTimeout(go,100);return;}'
+            . 'window.scrollTo(0,y(e));setTimeout(function(){window.scrollTo(0,y(e));},400);}'
+            . 'go();})();</script>';
         $html = str_replace('<div id="root"></div>', $inline . '<div id="root"></div>', $html);
 
         // La pagina è renderizzata al volo (promo/override dinamici): NON deve
