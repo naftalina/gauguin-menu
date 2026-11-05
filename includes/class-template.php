@@ -85,6 +85,9 @@ class GXM_Template {
         // iniettata fuori da #root, così
         // non serve ricompilare l'app React. Vedi plugin gauguin-30anni.
         $inline .= $this->anniv_promo();
+        // Allergeni: numeri sotto ogni piatto + pulsante con la legenda dei 14
+        // (pannello Menu Gauguin → Allergeni). Fuori da #root, come la striscia.
+        $inline .= GXM_Allergeni::public_html();
         // GEO / dati strutturati: il menù in JSON-LD (schema.org Menu) piu' una
         // copia testuale in <noscript>. Senza questi, per un crawler che non
         // esegue JavaScript la pagina era solo un <div id="root"> vuoto.

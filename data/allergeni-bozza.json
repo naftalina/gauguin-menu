@@ -1,0 +1,1109 @@
+{
+ "1": {
+  "a": [
+   1,
+   7
+  ],
+  "n": "Bruschette (pane). Affettati e verdure grigliate: controllare etichette (lattosio, solfiti nelle conserve)."
+ },
+ "2": {
+  "a": [],
+  "n": "Affettati: controllare in etichetta latte/lattosio, solfiti, frutta a guscio (mortadella al pistacchio)."
+ },
+ "3": {
+  "a": [],
+  "n": "Se sott'olio o sott'aceto: controllare solfiti."
+ },
+ "4": {
+  "a": [
+   7
+  ],
+  "n": "Parmigiano."
+ },
+ "5": {
+  "a": [
+   7
+  ],
+  "n": "Mozzarella di bufala."
+ },
+ "6": {
+  "a": [
+   1
+  ],
+  "n": "Pane. Controllare i condimenti delle bruschette (formaggi, pesce)."
+ },
+ "7": {
+  "a": [
+   1
+  ],
+  "n": "Pane. Ventricina: controllare etichetta."
+ },
+ "8": {
+  "a": [
+   1
+  ],
+  "n": "Pane. Controllare i condimenti (formaggi, pâté, pesce)."
+ },
+ "9": {
+  "a": [],
+  "n": ""
+ },
+ "10": {
+  "a": [],
+  "n": ""
+ },
+ "11": {
+  "a": [
+   4,
+   7
+  ],
+  "n": "Tonno, feta."
+ },
+ "12": {
+  "a": [],
+  "n": "Olive in salamoia: controllare solfiti."
+ },
+ "13": {
+  "a": [
+   1,
+   4,
+   7
+  ],
+  "n": "Friselle, tonno, bufala."
+ },
+ "14": {
+  "a": [
+   1,
+   3,
+   7
+  ],
+  "n": "Cotolette impanate (pangrattato, uovo), feta."
+ },
+ "15": {
+  "a": [
+   1,
+   3,
+   4,
+   7
+  ],
+  "n": "Pancarré, uova, acciughe, parmigiano. Pancarré: controllare latte/soia in etichetta."
+ },
+ "16": {
+  "a": [
+   1,
+   3,
+   7
+  ],
+  "n": "Pasta, uovo, pecorino/parmigiano."
+ },
+ "17": {
+  "a": [
+   1
+  ],
+  "n": "Pasta di grano duro."
+ },
+ "18": {
+  "a": [
+   1,
+   2,
+   14
+  ],
+  "n": "Mazzancolla (crostaceo), cozze, vongole, seppie (molluschi). Se c'è vino in cottura: solfiti."
+ },
+ "19": {
+  "a": [
+   1,
+   7
+  ],
+  "n": "Salsa rosa con panna. Controllare la salsa (uova se con maionese)."
+ },
+ "20": {
+  "a": [
+   1
+  ],
+  "n": ""
+ },
+ "21": {
+  "a": [
+   1,
+   7
+  ],
+  "n": "Salsa rosa con panna."
+ },
+ "22": {
+  "a": [
+   1,
+   3,
+   7
+  ],
+  "n": "Tortellini all'uovo con ripieno (formaggio). Controllare panna/burro e il ripieno in etichetta."
+ },
+ "23": {
+  "a": [
+   1,
+   3,
+   7
+  ],
+  "n": "Tortellini all'uovo, gratinatura (formaggio, besciamella?)."
+ },
+ "24": {
+  "a": [
+   1,
+   7
+  ],
+  "n": "Panna."
+ },
+ "25": {
+  "a": [
+   1
+  ],
+  "n": "Gnocchi: controllare uova in etichetta o ricetta."
+ },
+ "26": {
+  "a": [],
+  "n": ""
+ },
+ "27": {
+  "a": [
+   1,
+   3
+  ],
+  "n": "Impanatura."
+ },
+ "28": {
+  "a": [],
+  "n": "Controllare il contorno scelto."
+ },
+ "29": {
+  "a": [],
+  "n": "Controllare il contorno scelto."
+ },
+ "30": {
+  "a": [
+   7
+  ],
+  "n": "Grana."
+ },
+ "31": {
+  "a": [],
+  "n": "Salsa al tartufo/porcini: controllare etichetta (latte, panna)."
+ },
+ "32": {
+  "a": [],
+  "n": "DA VERIFICARE: spesso farina (glutine), sedano, vino (solfiti)."
+ },
+ "33": {
+  "a": [
+   1
+  ],
+  "n": "Infarinata. Al vino: aggiungere 12 (solfiti). Se con burro: 7."
+ },
+ "34": {
+  "a": [
+   1
+  ],
+  "n": "Infarinata. Se con burro o panna: 7."
+ },
+ "35": {
+  "a": [],
+  "n": ""
+ },
+ "36": {
+  "a": [],
+  "n": "Hamburger: controllare in etichetta glutine, latte, soia."
+ },
+ "37": {
+  "a": [],
+  "n": "Würstel e hamburger: controllare in etichetta latte, soia, glutine, senape."
+ },
+ "38": {
+  "a": [],
+  "n": "Hamburger: controllare in etichetta glutine, latte, soia."
+ },
+ "39": {
+  "a": [],
+  "n": "Würstel: controllare in etichetta latte, soia, glutine, senape."
+ },
+ "40": {
+  "a": [],
+  "n": "Salsiccia: controllare in etichetta (lattosio)."
+ },
+ "41": {
+  "a": [],
+  "n": "Controllare salsiccia e altri tagli preparati."
+ },
+ "42": {
+  "a": [],
+  "n": ""
+ },
+ "43": {
+  "a": [
+   7
+  ],
+  "n": "Latte e burro."
+ },
+ "44": {
+  "a": [],
+  "n": ""
+ },
+ "45": {
+  "a": [
+   7
+  ],
+  "n": "Parmigiano."
+ },
+ "46": {
+  "a": [],
+  "n": ""
+ },
+ "47": {
+  "a": [
+   1,
+   3,
+   11
+  ],
+  "n": "Pane al sesamo, maionese (uova). Maionese spesso con senape: controllare (10). Hamburger: controllare etichetta."
+ },
+ "48": {
+  "a": [
+   1,
+   3,
+   11
+  ],
+  "n": "Pane al sesamo, maionese (uova). Controllare senape nella maionese."
+ },
+ "49": {
+  "a": [
+   1,
+   3,
+   11
+  ],
+  "n": "Pane al sesamo, maionese (uova). Controllare senape nella maionese."
+ },
+ "50": {
+  "a": [
+   1,
+   3,
+   7,
+   11
+  ],
+  "n": "Pane al sesamo, maionese, formaggio."
+ },
+ "51": {
+  "a": [
+   1,
+   3,
+   11
+  ],
+  "n": "Pane al sesamo, maionese."
+ },
+ "52": {
+  "a": [
+   1,
+   3,
+   7,
+   11
+  ],
+  "n": "Pane al sesamo, maionese, formaggio."
+ },
+ "53": {
+  "a": [
+   1,
+   3,
+   7,
+   11
+  ],
+  "n": "Pane al sesamo, maionese, formaggio fritto (impanato)."
+ },
+ "54": {
+  "a": [
+   1,
+   3,
+   7
+  ],
+  "n": "Pane 4 cereali (controllare sesamo, soia), formaggio fritto impanato."
+ },
+ "55": {
+  "a": [
+   1,
+   11,
+   12
+  ],
+  "n": "Pane al sesamo, glassa di aceto balsamico (solfiti)."
+ },
+ "56": {
+  "a": [
+   1,
+   3,
+   7,
+   11
+  ],
+  "n": "Pane al sesamo, maionese, formaggio, emmental. Salsa BBQ: controllare senape/sedano/solfiti."
+ },
+ "57": {
+  "a": [
+   1,
+   3
+  ],
+  "n": "Pane, maionese. Würstel: controllare etichetta."
+ },
+ "58": {
+  "a": [
+   1,
+   3
+  ],
+  "n": "Pane, cotoletta impanata, maionese."
+ },
+ "59": {
+  "a": [
+   1,
+   3,
+   10
+  ],
+  "n": "Pane, impanatura ai corn flakes (malto d'orzo), maionese, senape."
+ },
+ "60": {
+  "a": [
+   1,
+   3
+  ],
+  "n": "Pane ai cereali (segale, avena, orzo) e semi: controllare sesamo e soia. Maionese."
+ },
+ "61": {
+  "a": [
+   1,
+   3,
+   7,
+   10
+  ],
+  "n": "Pane, yogurt, senape, maionese."
+ },
+ "62": {
+  "a": [
+   1
+  ],
+  "n": "Servito nel pane: controllare il tipo di pane e le salse."
+ },
+ "63": {
+  "a": [
+   1
+  ],
+  "n": "Servito nel pane: controllare il tipo di pane e le salse."
+ },
+ "64": {
+  "a": [
+   1
+  ],
+  "n": "Servito nel pane: controllare il tipo di pane e le salse."
+ },
+ "65": {
+  "a": [
+   1
+  ],
+  "n": "Servito nel pane: controllare il tipo di pane e le salse."
+ },
+ "66": {
+  "a": [
+   1
+  ],
+  "n": "Servito nel pane: controllare il tipo di pane e le salse."
+ },
+ "67": {
+  "a": [
+   1
+  ],
+  "n": "Servito nel pane: controllare il tipo di pane e le salse."
+ },
+ "68": {
+  "a": [
+   1,
+   3,
+   7
+  ],
+  "n": "Prodotto pronto: controllare etichetta."
+ },
+ "69": {
+  "a": [
+   1,
+   3,
+   7
+  ],
+  "n": "Prodotto pronto: controllare etichetta."
+ },
+ "70": {
+  "a": [
+   1,
+   3,
+   7
+  ],
+  "n": "Mozzarella impanata: controllare etichetta."
+ },
+ "71": {
+  "a": [
+   1,
+   3,
+   7
+  ],
+  "n": "Prodotto pronto: controllare etichetta."
+ },
+ "72": {
+  "a": [],
+  "n": "Friggitrice condivisa con prodotti impanati: possibili tracce di glutine. Salse: maionese (uova), controllare senape."
+ },
+ "73": {
+  "a": [
+   1,
+   3,
+   7
+  ],
+  "n": "Prodotto pronto: controllare etichetta."
+ },
+ "74": {
+  "a": [
+   1,
+   3,
+   7
+  ],
+  "n": "Prodotto pronto: controllare etichetta."
+ },
+ "75": {
+  "a": [
+   1,
+   3,
+   7
+  ],
+  "n": "Fritti impanati e formaggio."
+ },
+ "76": {
+  "a": [
+   1,
+   7
+  ],
+  "n": "Impasto, mozzarella."
+ },
+ "77": {
+  "a": [
+   1
+  ],
+  "n": "Pastella: controllare etichetta (latte, uova)."
+ },
+ "78": {
+  "a": [
+   1,
+   7
+  ],
+  "n": "Prodotto pronto: controllare etichetta."
+ },
+ "79": {
+  "a": [
+   1,
+   7
+  ],
+  "n": "Prodotto pronto: controllare etichetta."
+ },
+ "80": {
+  "a": [
+   1,
+   7
+  ],
+  "n": "Prodotto pronto: controllare etichetta."
+ },
+ "81": {
+  "a": [
+   1,
+   7
+  ],
+  "n": "Prodotto pronto: controllare etichetta."
+ },
+ "82": {
+  "a": [
+   1
+  ],
+  "n": "Prodotto pronto: controllare etichetta (uova, latte, soia, sedano)."
+ },
+ "83": {
+  "a": [
+   1,
+   3,
+   7
+  ],
+  "n": "Impasto, mozzarella, uovo."
+ },
+ "84": {
+  "a": [
+   1,
+   7
+  ],
+  "n": "Impasto, mozzarella, grana."
+ },
+ "85": {
+  "a": [
+   1,
+   7
+  ],
+  "n": "Impasto, scamorza. Hamburger: controllare etichetta."
+ },
+ "86": {
+  "a": [
+   1,
+   7
+  ],
+  "n": "Impasto, mozzarella."
+ },
+ "87": {
+  "a": [
+   1,
+   7
+  ],
+  "n": "Impasto, purè (latte), mozzarella."
+ },
+ "88": {
+  "a": [
+   1,
+   7
+  ],
+  "n": "Impasto, mozzarella."
+ },
+ "89": {
+  "a": [
+   1,
+   7
+  ],
+  "n": "Impasto, mozzarella, grana."
+ },
+ "90": {
+  "a": [
+   1,
+   7
+  ],
+  "n": "Impasto, mozzarella."
+ },
+ "91": {
+  "a": [
+   1,
+   2,
+   3
+  ],
+  "n": "Focaccia, gamberetti (crostacei), maionese/salsa rosa (uova). Controllare senape."
+ },
+ "92": {
+  "a": [
+   1,
+   7
+  ],
+  "n": "Impasto, mozzarella. Würstel: controllare etichetta."
+ },
+ "93": {
+  "a": [
+   1,
+   7,
+   8
+  ],
+  "n": "Impasto, mozzarella, gorgonzola, noci."
+ },
+ "94": {
+  "a": [
+   1,
+   7
+  ],
+  "n": "Focaccia, mozzarella."
+ },
+ "95": {
+  "a": [
+   1
+  ],
+  "n": "Impasto."
+ },
+ "96": {
+  "a": [
+   1,
+   4,
+   7
+  ],
+  "n": "Impasto, tonno, mozzarella."
+ },
+ "97": {
+  "a": [
+   1,
+   7
+  ],
+  "n": "Impasto, mozzarella."
+ },
+ "98": {
+  "a": [
+   1,
+   7
+  ],
+  "n": "Impasto, mozzarella."
+ },
+ "99": {
+  "a": [
+   1,
+   2,
+   7
+  ],
+  "n": "Impasto, gamberetti, mozzarella."
+ },
+ "100": {
+  "a": [
+   1,
+   7
+  ],
+  "n": "Impasto, mozzarella."
+ },
+ "101": {
+  "a": [
+   1,
+   7
+  ],
+  "n": "Impasto, mozzarella."
+ },
+ "102": {
+  "a": [
+   1
+  ],
+  "n": "Impasto."
+ },
+ "103": {
+  "a": [
+   1,
+   7
+  ],
+  "n": "Impasto, bufala."
+ },
+ "104": {
+  "a": [
+   1,
+   4,
+   7
+  ],
+  "n": "Impasto, mozzarella, alici."
+ },
+ "105": {
+  "a": [
+   1,
+   7
+  ],
+  "n": "Impasto, mozzarella."
+ },
+ "106": {
+  "a": [
+   1,
+   7
+  ],
+  "n": "Impasto, mozzarella. Würstel: controllare etichetta."
+ },
+ "107": {
+  "a": [
+   1,
+   7
+  ],
+  "n": "Impasto, mozzarella."
+ },
+ "108": {
+  "a": [
+   1,
+   7
+  ],
+  "n": "Impasto, mozzarella."
+ },
+ "109": {
+  "a": [
+   1,
+   7
+  ],
+  "n": "Impasto, formaggi."
+ },
+ "110": {
+  "a": [
+   1,
+   7
+  ],
+  "n": "Impasto, mozzarella."
+ },
+ "111": {
+  "a": [
+   1,
+   7
+  ],
+  "n": "Impasto, mozzarella."
+ },
+ "112": {
+  "a": [
+   1,
+   7
+  ],
+  "n": "Impasto, mozzarella, stracchino."
+ },
+ "113": {
+  "a": [
+   1,
+   14
+  ],
+  "n": "Impasto, frutti di mare (molluschi). Se nel mix ci sono gamberi: aggiungere 2 (crostacei). Con mozzarella? aggiungere 7."
+ },
+ "114": {
+  "a": [
+   1,
+   7
+  ],
+  "n": "Impasto, mozzarella."
+ },
+ "115": {
+  "a": [
+   1,
+   4
+  ],
+  "n": "Impasto, alici. Capperi: controllare solfiti."
+ },
+ "116": {
+  "a": [
+   1,
+   7
+  ],
+  "n": "Impasto, mozzarella."
+ },
+ "117": {
+  "a": [
+   1,
+   4,
+   7
+  ],
+  "n": "Impasto, mozzarella, alici."
+ },
+ "118": {
+  "a": [
+   1,
+   4,
+   7
+  ],
+  "n": "Impasto, mozzarella, alici."
+ },
+ "119": {
+  "a": [
+   1,
+   7
+  ],
+  "n": "Impasto, mozzarella."
+ },
+ "120": {
+  "a": [
+   1,
+   7
+  ],
+  "n": "Impasto, mozzarella, gorgonzola."
+ },
+ "121": {
+  "a": [
+   1,
+   4,
+   7
+  ],
+  "n": "Impasto, mozzarella, pesce: specificare quale (se crostacei 2, molluschi 14)."
+ },
+ "122": {
+  "a": [
+   1,
+   7
+  ],
+  "n": "Impasto, mozzarella. Würstel e patatine: controllare etichetta."
+ },
+ "123": {
+  "a": [
+   1,
+   7
+  ],
+  "n": "Impasto, mozzarella."
+ },
+ "124": {
+  "a": [
+   1,
+   4,
+   7
+  ],
+  "n": "Impasto, mozzarella, acciughe, tonno."
+ },
+ "125": {
+  "a": [
+   1,
+   4,
+   7
+  ],
+  "n": "Impasto, salmone. Con mozzarella? controllare."
+ },
+ "126": {
+  "a": [
+   1,
+   7
+  ],
+  "n": "Impasto, bufala, stracchino."
+ },
+ "127": {
+  "a": [
+   1,
+   7
+  ],
+  "n": "Impasto, bufala."
+ },
+ "128": {
+  "a": [
+   1,
+   7
+  ],
+  "n": "Impasto, mozzarella, parmigiano."
+ },
+ "129": {
+  "a": [
+   1,
+   7
+  ],
+  "n": "Impasto, ricotta, mozzarella."
+ },
+ "132": {
+  "a": [
+   7
+  ],
+  "n": "Panna. Topping: controllare."
+ },
+ "133": {
+  "a": [
+   3,
+   7
+  ],
+  "n": "Uova, latte."
+ },
+ "134": {
+  "a": [
+   1,
+   3,
+   7
+  ],
+  "n": "Prodotto pronto: controllare etichetta (soia, frutta a guscio)."
+ },
+ "135": {
+  "a": [
+   3,
+   7
+  ],
+  "n": "Prodotto pronto: controllare etichetta (frutta a guscio, soia, glutine)."
+ },
+ "136": {
+  "a": [
+   1,
+   3,
+   7
+  ],
+  "n": "Prodotto pronto: controllare etichetta (soia, frutta a guscio)."
+ },
+ "137": {
+  "a": [],
+  "n": "Sorbetto: controllare etichetta (latte). Il cocco non è tra i 14 allergeni."
+ },
+ "138": {
+  "a": [
+   1,
+   3,
+   7
+  ],
+  "n": "Base biscotto, formaggio. Con Nutella: 8 (nocciole) e 6 (soia). Controllare etichetta."
+ },
+ "139": {
+  "a": [],
+  "n": ""
+ },
+ "140": {
+  "a": [],
+  "n": ""
+ },
+ "141": {
+  "a": [
+   1
+  ],
+  "n": "Orzo e frumento."
+ },
+ "142": {
+  "a": [
+   1
+  ],
+  "n": "Frumento e orzo."
+ },
+ "144": {
+  "a": [
+   1
+  ],
+  "n": "Orzo."
+ },
+ "145": {
+  "a": [
+   1
+  ],
+  "n": "Orzo."
+ },
+ "146": {
+  "a": [
+   1
+  ],
+  "n": "Orzo."
+ },
+ "147": {
+  "a": [
+   1
+  ],
+  "n": "Orzo."
+ },
+ "148": {
+  "a": [
+   1
+  ],
+  "n": "Orzo."
+ },
+ "150": {
+  "a": [
+   1
+  ],
+  "n": "Orzo."
+ },
+ "151": {
+  "a": [],
+  "n": "Friggitrice condivisa: possibili tracce di glutine. Salse: controllare."
+ },
+ "202": {
+  "a": [
+   12
+  ],
+  "n": "Vino: solfiti."
+ },
+ "203": {
+  "a": [
+   12
+  ],
+  "n": "Vino: solfiti."
+ },
+ "205": {
+  "a": [
+   12
+  ],
+  "n": "Vino: solfiti."
+ },
+ "206": {
+  "a": [
+   12
+  ],
+  "n": "Vino: solfiti."
+ },
+ "207": {
+  "a": [
+   12
+  ],
+  "n": "Vino: solfiti."
+ },
+ "208": {
+  "a": [
+   12
+  ],
+  "n": "Vino: solfiti."
+ },
+ "209": {
+  "a": [
+   12
+  ],
+  "n": "Vino: solfiti."
+ },
+ "210": {
+  "a": [],
+  "n": "Distillato: i cereali usati per i distillati sono esclusi dall'obbligo."
+ },
+ "211": {
+  "a": [],
+  "n": ""
+ },
+ "212": {
+  "a": [],
+  "n": ""
+ },
+ "213": {
+  "a": [],
+  "n": ""
+ },
+ "214": {
+  "a": [],
+  "n": ""
+ },
+ "215": {
+  "a": [],
+  "n": ""
+ },
+ "216": {
+  "a": [],
+  "n": "Distillato da cereali: escluso dall'obbligo."
+ },
+ "217": {
+  "a": [],
+  "n": "Distillato da cereali: escluso dall'obbligo."
+ },
+ "218": {
+  "a": [],
+  "n": "Distillato da cereali: escluso dall'obbligo."
+ },
+ "219": {
+  "a": [],
+  "n": "Distillato da cereali: escluso dall'obbligo."
+ },
+ "220": {
+  "a": [],
+  "n": "Distillato da cereali: escluso dall'obbligo."
+ },
+ "221": {
+  "a": [],
+  "n": ""
+ },
+ "222": {
+  "a": [],
+  "n": ""
+ },
+ "223": {
+  "a": [],
+  "n": ""
+ },
+ "224": {
+  "a": [],
+  "n": ""
+ },
+ "225": {
+  "a": [
+   12
+  ],
+  "n": "Cognac: controllare in etichetta la dicitura «contiene solfiti»."
+ },
+ "226": {
+  "a": [
+   12
+  ],
+  "n": "Vino: solfiti."
+ },
+ "227": {
+  "a": [
+   12
+  ],
+  "n": "Vino biologico: solfiti comunque presenti (controllare etichetta)."
+ },
+ "228": {
+  "a": [
+   12
+  ],
+  "n": "Vino: solfiti."
+ },
+ "229": {
+  "a": [
+   12
+  ],
+  "n": "Vino: solfiti."
+ },
+ "230": {
+  "a": [
+   12
+  ],
+  "n": "Vino: solfiti."
+ },
+ "_info": "BOZZA preparata dagli ingredienti scritti nel menu, 05/11/2026. Numeri secondo il Reg. UE 1169/2011 all. II: 1 glutine, 2 crostacei, 3 uova, 4 pesce, 5 arachidi, 6 soia, 7 latte, 8 frutta a guscio, 9 sedano, 10 senape, 11 sesamo, 12 solfiti, 13 lupini, 14 molluschi. Da verificare voce per voce con ricette ed etichette dei prodotti prima di pubblicare."
+}
