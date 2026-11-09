@@ -78,6 +78,9 @@ class GXM_Template {
         $inline = '<script>window.GXM_OVERRIDES_URL=' .
             wp_json_encode(esc_url_raw(rest_url('gauguin-menu/v1/overrides'))) .
             ';</script>';
+        // Invito al sondaggio "E adesso?" (plugin ordini, /e-adesso/): stessa
+        // striscia della home, in cima a tutto.
+        $inline .= $this->survey_strip();
         // Avviso ferie: date e testo arrivano dal plugin ordini (pannello
         // Impostazioni → Ferie), unica fonte per sito, ordini e menu.
         $inline .= $this->vacation_notice();
@@ -157,6 +160,44 @@ class GXM_Template {
      * (scatta ogni 2 novembre), così il testo non invecchia mai. La pagina
      * non va in cache (DONOTCACHEPAGE), quindi il conto è sempre aggiornato.
      */
+    /**
+     * Striscia del sondaggio "E adesso?", uguale a quella della home: testo e
+     * indirizzo arrivano dal plugin ordini (Gauguin_Survey), così se il
+     * sondaggio sparisce da lì sparisce anche dal menù. La X la chiude per 30
+     * giorni con la stessa chiave della home: chiusa una volta, chiusa ovunque.
+     */
+    private function survey_strip() {
+        if (!class_exists('Gauguin_Survey') || !defined('Gauguin_Survey::INVITE_TEXT')) return '';
+        ob_start();
+        ?>
+<style id="gxm-strip-css">
+.gxm-strip{position:relative;z-index:8;display:flex;align-items:stretch;height:36px;background:#9E152A;color:#fff;font:600 14px/36px 'Inter',system-ui,-apple-system,sans-serif;letter-spacing:normal}
+.gxm-strip a{flex:1 1 auto;min-width:0;display:block;padding:0 0 0 40px;color:#fff;text-decoration:none;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.gxm-strip a:hover{text-decoration:underline}
+.gxm-strip button{flex:0 0 40px;width:40px;margin:0;padding:0;border:0;background:transparent;color:#fff;font:400 22px/1 system-ui,-apple-system,sans-serif;cursor:pointer}
+.gxm-strip button:hover{background:rgba(0,0,0,.12)}
+.gxm-strip :focus-visible{outline:2px solid #fff;outline-offset:-3px}
+@media (max-width:600px){.gxm-strip a{padding-left:12px;font-size:clamp(11px,3.45vw,14px)}}
+</style>
+<div class="gxm-strip" id="gxm-strip" role="region" aria-label="Sondaggio">
+  <a href="<?php echo esc_url(Gauguin_Survey::page_url()); ?>"><?php echo esc_html(Gauguin_Survey::INVITE_TEXT); ?></a>
+  <button type="button" aria-label="Chiudi">×</button>
+</div>
+<script>
+(function(){
+  var K='gauguin_strip_sondaggio_chiusa',D=30*864e5,el=document.getElementById('gxm-strip');
+  if(!el)return;
+  try{var t=+localStorage.getItem(K);if(t&&Date.now()-t<D){el.parentNode.removeChild(el);return;}}catch(e){}
+  el.querySelector('button').addEventListener('click',function(){
+    try{localStorage.setItem(K,String(Date.now()));}catch(e){}
+    el.parentNode.removeChild(el);
+  });
+})();
+</script>
+<?php
+        return ob_get_clean();
+    }
+
     private function anniv_promo() {
         $tz  = wp_timezone();
         $now = new DateTime('now', $tz);
