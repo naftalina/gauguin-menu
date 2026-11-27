@@ -77,10 +77,9 @@
  "14": {
   "a": [
    1,
-   3,
    7
   ],
-  "n": "Cotolette impanate (pangrattato, uovo), feta."
+  "n": "Cotolette con pangrattato (senza uovo), feta."
  },
  "15": {
   "a": [
@@ -119,7 +118,7 @@
    1,
    7
   ],
-  "n": "Salsa rosa con panna. Controllare la salsa (uova se con maionese)."
+  "n": "Salsa rosa del locale per la pasta: pomodoro e panna. Vodka."
  },
  "20": {
   "a": [
@@ -132,7 +131,7 @@
    1,
    7
   ],
-  "n": "Salsa rosa con panna."
+  "n": "Salsa rosa del locale per la pasta: pomodoro e panna."
  },
  "22": {
   "a": [
@@ -172,10 +171,9 @@
  },
  "27": {
   "a": [
-   1,
-   3
+   1
   ],
-  "n": "Impanatura."
+  "n": "Cotoletta del locale: solo pangrattato, senza uovo (27/11/2026)."
  },
  "28": {
   "a": [],
@@ -400,7 +398,7 @@
    3,
    10
   ],
-  "n": "Pane, cotoletta impanata, maionese (Gourmayo Develey: uova, amido di frumento; Viander: uova, senape)."
+  "n": "Pane, cotoletta con pangrattato (senza uovo), maionese (Gourmayo Develey: uova, amido di frumento; Viander: uova, senape)."
  },
  "59": {
   "a": [
@@ -648,7 +646,7 @@
    3,
    10
   ],
-  "n": "Focaccia, gamberetti (crostacei), maionese (Gourmayo Develey: uova, amido di frumento; Viander: uova, senape)."
+  "n": "Focaccia, gamberetti e mazzancolle (crostacei), salsa rosa del locale = maionese (Gourmayo Develey: uova, amido di frumento; Viander: uova, senape) e ketchup."
  },
  "92": {
   "a": [
@@ -808,7 +806,7 @@
    1,
    14
   ],
-  "n": "Impasto, seppie, cozze e vongole (molluschi), come la Mare e monti. Se nel mix ci sono gamberi o mazzancolle aggiungere 2."
+  "n": "Impasto, seppie, cozze e vongole (molluschi): niente gamberi né mazzancolle, confermato dal locale."
  },
  "114": {
   "a": [
@@ -948,7 +946,7 @@
    6,
    7
   ],
-  "n": "Fatta dal locale come la cheesecake: biscotti pressati, Philadelphia, birra Guinness, cioccolato (soia). Uova e soia da etichetta dei biscotti."
+  "n": "Fatta dal locale come la cheesecake: biscotti pressati Dolciando tipo Oswego (frumento, malto d'orzo, miele: glutine; uova e soia da confermare in etichetta), Philadelphia, birra Guinness, cioccolato (soia). Uova e soia da etichetta dei biscotti."
  },
  "135": {
   "a": [
@@ -1202,7 +1200,7 @@
    7,
    8
   ],
-  "n": "Fatta dal locale: biscotti pressati (glutine; uova e soia da etichetta dei biscotti), Philadelphia (latte), birra Guinness (orzo), zucchero. Topping Nutella: nocciole, soia, latte; caramello Carte d'Or: latte."
+  "n": "Fatta dal locale: biscotti pressati Dolciando tipo Oswego (frumento, malto d'orzo, miele: glutine; uova e soia da confermare in etichetta), Philadelphia (latte), birra Guinness (orzo), zucchero. Topping Nutella: nocciole, soia, latte; caramello Carte d'Or: latte."
  },
  "bibite:138": {
   "a": [],
