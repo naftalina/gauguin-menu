@@ -64,7 +64,7 @@ class GXM_Allergeni {
     }
 
     /** Versione della bozza: se cresce, le voci non ancora verificate ripartono da quella nuova. */
-    const VERSIONE_BOZZA = 4;
+    const VERSIONE_BOZZA = 5;
 
     /**
      * Id usati da due prodotti diversi in due categorie (82 = Chicken Nuggets

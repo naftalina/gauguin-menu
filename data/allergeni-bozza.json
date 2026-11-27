@@ -230,10 +230,9 @@
  },
  "37": {
   "a": [
-   9,
    10
   ],
-  "n": "hamburger Salomon (senape nelle spezie, da scheda del produttore). Würstel Nocker: scheda non ancora pubblicata, di solito sedano e senape."
+  "n": "hamburger Salomon (senape nelle spezie, da scheda del produttore). Würstel Nocker Servelade: nessun allergene (depliant Nocker: senza glutine, senza proteine del latte, senza lattosio). Patate: nessun allergene."
  },
  "38": {
   "a": [
@@ -242,11 +241,8 @@
   "n": "hamburger Salomon (senape nelle spezie, da scheda del produttore)."
  },
  "39": {
-  "a": [
-   9,
-   10
-  ],
-  "n": "Würstel Nocker: scheda non ancora pubblicata, di solito sedano e senape. Patate: nessun allergene."
+  "a": [],
+  "n": "Würstel Nocker Servelade: nessun allergene (depliant Nocker: senza glutine, senza proteine del latte, senza lattosio). Patate: nessun allergene."
  },
  "40": {
   "a": [],
@@ -370,7 +366,7 @@
    11,
    12
   ],
-  "n": "pane al sesamo Lantmännen (glutine, soia, sesamo), glassa di aceto balsamico (solfiti). Hamburger Chianina Baldi: scheda non trovata."
+  "n": "Pane al sesamo Lantmännen (glutine, soia, sesamo), glassa di aceto balsamico (solfiti). Hamburger Chianina Baldi: nessun allergene (possibili tracce di uova e latte)."
  },
  "56": {
   "a": [
@@ -387,10 +383,9 @@
   "a": [
    1,
    3,
-   9,
    10
   ],
-  "n": "Pane ciabatta, maionese (Gourmayo Develey: uova, amido di frumento; Viander: uova, senape). Würstel Nocker: scheda non pubblicata, di solito sedano e senape."
+  "n": "Pane ciabatta, maionese (Gourmayo Develey: uova, amido di frumento; Viander: uova, senape). Würstel Nocker Servelade: nessun allergene (depliant Nocker: senza glutine, senza proteine del latte, senza lattosio)."
  },
  "58": {
   "a": [
@@ -433,7 +428,7 @@
    6,
    11
   ],
-  "n": "Pane al sesamo del Tucano, lo stesso degli hamburger classici (Lantmännen: glutine, soia, sesamo). Carne: scheda del produttore da chiedere (alcuni burger hanno senape nelle spezie)."
+  "n": "Pane al sesamo del Tucano (Lantmännen: glutine, soia, sesamo). Carne HAM Gourmet: il produttore dichiara «senza glutine», ingredienti non pubblicati: chiedere la scheda."
  },
  "63": {
   "a": [
@@ -441,7 +436,7 @@
    6,
    11
   ],
-  "n": "Pane al sesamo del Tucano, lo stesso degli hamburger classici (Lantmännen: glutine, soia, sesamo). Carne: scheda del produttore da chiedere (alcuni burger hanno senape nelle spezie)."
+  "n": "Pane al sesamo del Tucano (Lantmännen: glutine, soia, sesamo). Carne HAM Gourmet: il produttore dichiara «senza glutine», ingredienti non pubblicati: chiedere la scheda."
  },
  "64": {
   "a": [
@@ -449,7 +444,7 @@
    6,
    11
   ],
-  "n": "Pane al sesamo del Tucano, lo stesso degli hamburger classici (Lantmännen: glutine, soia, sesamo). Carne: scheda del produttore da chiedere (alcuni burger hanno senape nelle spezie)."
+  "n": "Pane al sesamo del Tucano (Lantmännen: glutine, soia, sesamo). Carne HAM Gourmet: il produttore dichiara «senza glutine», ingredienti non pubblicati: chiedere la scheda."
  },
  "65": {
   "a": [
@@ -457,7 +452,7 @@
    6,
    11
   ],
-  "n": "Pane al sesamo del Tucano, lo stesso degli hamburger classici (Lantmännen: glutine, soia, sesamo). Carne: scheda del produttore da chiedere (alcuni burger hanno senape nelle spezie)."
+  "n": "Pane al sesamo del Tucano (Lantmännen: glutine, soia, sesamo). Carne HAM Gourmet: il produttore dichiara «senza glutine», ingredienti non pubblicati: chiedere la scheda."
  },
  "66": {
   "a": [
@@ -465,7 +460,7 @@
    6,
    11
   ],
-  "n": "Pane al sesamo del Tucano, lo stesso degli hamburger classici (Lantmännen: glutine, soia, sesamo). Carne: scheda del produttore da chiedere (alcuni burger hanno senape nelle spezie)."
+  "n": "Pane al sesamo del Tucano (Lantmännen: glutine, soia, sesamo). Carne HAM Gourmet: il produttore dichiara «senza glutine», ingredienti non pubblicati: chiedere la scheda. Ibero Gaucho: con paprika piccante."
  },
  "67": {
   "a": [
@@ -473,15 +468,16 @@
    6,
    11
   ],
-  "n": "Pane al sesamo del Tucano, lo stesso degli hamburger classici (Lantmännen: glutine, soia, sesamo). Carne: scheda del produttore da chiedere (alcuni burger hanno senape nelle spezie)."
+  "n": "Pane al sesamo del Tucano (Lantmännen: glutine, soia, sesamo). Carne HAM Gourmet: il produttore dichiara «senza glutine», ingredienti non pubblicati: chiedere la scheda."
  },
  "68": {
   "a": [
    1,
+   3,
    7,
    9
   ],
-  "n": "Arancini «RI»: scheda non trovata; arancini al ragù simili (L'Ascolana) contengono glutine, latte, sedano."
+  "n": "Arancini Rispo al sugo: glutine, latte, uova (lisozima nel grana), sedano. Possibili tracce di pesce, soia, solfiti, crostacei."
  },
  "69": {
   "a": [
@@ -558,7 +554,7 @@
    1,
    7
   ],
-  "n": "Prodotto pronto: controllare etichetta."
+  "n": "Salomon Broccoli & Cheese Nuggets: glutine, latte (scheda del produttore, nessun altro allergene)."
  },
  "79": {
   "a": [
@@ -651,11 +647,9 @@
  "92": {
   "a": [
    1,
-   7,
-   9,
-   10
+   7
   ],
-  "n": "Impasto, mozzarella. Würstel Nocker: di solito sedano e senape."
+  "n": "Impasto, mozzarella. Würstel Nocker Servelade: nessun allergene (depliant Nocker: senza glutine, senza proteine del latte, senza lattosio). Salsiccia Federici: scheda da chiedere."
  },
  "93": {
   "a": [
@@ -753,11 +747,9 @@
  "106": {
   "a": [
    1,
-   7,
-   9,
-   10
+   7
   ],
-  "n": "Impasto, mozzarella. Würstel Nocker: di solito sedano e senape."
+  "n": "Impasto, mozzarella. Würstel Nocker Servelade: nessun allergene (depliant Nocker: senza glutine, senza proteine del latte, senza lattosio)."
  },
  "107": {
   "a": [
@@ -870,11 +862,9 @@
  "122": {
   "a": [
    1,
-   7,
-   9,
-   10
+   7
   ],
-  "n": "Impasto, mozzarella. Würstel Nocker: di solito sedano e senape. Patatine: nessun allergene."
+  "n": "Impasto, mozzarella. Würstel Nocker Servelade: nessun allergene (depliant Nocker: senza glutine, senza proteine del latte, senza lattosio). Patatine Aviko: nessun allergene."
  },
  "123": {
   "a": [
@@ -942,11 +932,10 @@
  "134": {
   "a": [
    1,
-   3,
    6,
    7
   ],
-  "n": "Fatta dal locale come la cheesecake: biscotti pressati Dolciando tipo Oswego (frumento, malto d'orzo, miele: glutine; uova e soia da confermare in etichetta), Philadelphia, birra Guinness, cioccolato (soia). Uova e soia da etichetta dei biscotti."
+  "n": "Fatta dal locale: biscotti Oswego Dolciando (glutine, latte, soia), Philadelphia, birra Guinness, cioccolato."
  },
  "135": {
   "a": [
@@ -1177,12 +1166,9 @@
  "_info": "BOZZA v2 del 27/11/2026: ingredienti del menu + prodotti delle fatture (set-nov 2026) + schede tecniche dei produttori dove trovate. Dove la nota dice «scheda non trovata» il valore è quello tipico di prodotti uguali: va confermato con l'etichetta. Numeri secondo il Reg. UE 1169/2011 all. II: 1 glutine, 2 crostacei, 3 uova, 4 pesce, 5 arachidi, 6 soia, 7 latte, 8 frutta a guscio, 9 sedano, 10 senape, 11 sesamo, 12 solfiti, 13 lupini, 14 molluschi.",
  "fritti:82": {
   "a": [
-   1,
-   3,
-   6,
-   7
+   1
   ],
-  "n": "Bocconcini di pollo pastellati OSI: scheda non trovata; prodotti uguali contengono glutine, uova, soia, latte."
+  "n": "Chicken Nuggets OSI Foodworks art. 40010: glutine (frumento), da tabella allergeni del produttore. Tracce: da confermare con la scheda italiana."
  },
  "pizze-bianche:82": {
   "a": [
@@ -1195,12 +1181,11 @@
  "dessert:138": {
   "a": [
    1,
-   3,
    6,
    7,
    8
   ],
-  "n": "Fatta dal locale: biscotti pressati Dolciando tipo Oswego (frumento, malto d'orzo, miele: glutine; uova e soia da confermare in etichetta), Philadelphia (latte), birra Guinness (orzo), zucchero. Topping Nutella: nocciole, soia, latte; caramello Carte d'Or: latte."
+  "n": "Fatta dal locale: biscotti Oswego Dolciando (glutine, latte, soia), Philadelphia (latte), birra Guinness (orzo), zucchero. Topping Nutella: nocciole, soia, latte; caramello Carte d'Or: latte."
  },
  "bibite:138": {
   "a": [],
