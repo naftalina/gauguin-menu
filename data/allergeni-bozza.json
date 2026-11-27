@@ -32,7 +32,7 @@
   "a": [
    1
   ],
-  "n": "Pane. Controllare i condimenti delle bruschette (formaggi, pesce)."
+  "n": "Pane. I condimenti cambiano secondo il prodotto: allergeni del condimento da chiedere al personale."
  },
  "7": {
   "a": [
@@ -45,7 +45,7 @@
   "a": [
    1
   ],
-  "n": "Pane. Controllare i condimenti (formaggi, pâté, pesce)."
+  "n": "Pane. I condimenti cambiano secondo il prodotto: allergeni del condimento da chiedere al personale."
  },
  "9": {
   "a": [],
@@ -109,9 +109,10 @@
   "a": [
    1,
    2,
+   12,
    14
   ],
-  "n": "Mazzancolla (crostaceo), cozze, vongole, seppie (molluschi). Se c'è vino in cottura: solfiti."
+  "n": "Mazzancolla (crostacei), cozze, vongole, seppie (molluschi), sfumato con il vino (solfiti)."
  },
  "19": {
   "a": [
@@ -160,9 +161,10 @@
  },
  "25": {
   "a": [
-   1
+   1,
+   3
   ],
-  "n": "Gnocchi: controllare uova in etichetta o ricetta."
+  "n": "Gnocchi comprati da un pastificio di pasta all'uovo: glutine, uova. Salsiccia Federici: scheda da chiedere."
  },
  "26": {
   "a": [],
@@ -196,20 +198,27 @@
   "n": "Crema tartufata «GG»: scheda non trovata, prodotti simili contengono pangrattato (glutine). Porcini trifolati Viander: scheda da chiedere."
  },
  "32": {
-  "a": [],
-  "n": "DA VERIFICARE: spesso farina (glutine), sedano, vino (solfiti)."
+  "a": [
+   1,
+   9,
+   12
+  ],
+  "n": "Cipolle, farina, sedano, vino (dal locale, 27/11/2026)."
  },
  "33": {
   "a": [
-   1
+   1,
+   7,
+   12
   ],
-  "n": "Infarinata. Al vino: aggiungere 12 (solfiti). Se con burro: 7."
+  "n": "Infarinata, burro. Solfiti dalla versione al vino (indicati anche per quella al limone: è la stessa voce)."
  },
  "34": {
   "a": [
-   1
+   1,
+   7
   ],
-  "n": "Infarinata. Se con burro o panna: 7."
+  "n": "Infarinata, burro."
  },
  "35": {
   "a": [],
@@ -422,39 +431,51 @@
  },
  "62": {
   "a": [
-   1
+   1,
+   6,
+   11
   ],
-  "n": "Servito nel pane: controllare il tipo di pane e le salse."
+  "n": "Pane al sesamo del Tucano, lo stesso degli hamburger classici (Lantmännen: glutine, soia, sesamo). Carne: scheda del produttore da chiedere (alcuni burger hanno senape nelle spezie)."
  },
  "63": {
   "a": [
-   1
+   1,
+   6,
+   11
   ],
-  "n": "Servito nel pane: controllare il tipo di pane e le salse."
+  "n": "Pane al sesamo del Tucano, lo stesso degli hamburger classici (Lantmännen: glutine, soia, sesamo). Carne: scheda del produttore da chiedere (alcuni burger hanno senape nelle spezie)."
  },
  "64": {
   "a": [
-   1
+   1,
+   6,
+   11
   ],
-  "n": "Servito nel pane: controllare il tipo di pane e le salse."
+  "n": "Pane al sesamo del Tucano, lo stesso degli hamburger classici (Lantmännen: glutine, soia, sesamo). Carne: scheda del produttore da chiedere (alcuni burger hanno senape nelle spezie)."
  },
  "65": {
   "a": [
-   1
+   1,
+   6,
+   11
   ],
-  "n": "Servito nel pane: controllare il tipo di pane e le salse."
+  "n": "Pane al sesamo del Tucano, lo stesso degli hamburger classici (Lantmännen: glutine, soia, sesamo). Carne: scheda del produttore da chiedere (alcuni burger hanno senape nelle spezie)."
  },
  "66": {
   "a": [
-   1
+   1,
+   6,
+   11
   ],
-  "n": "Servito nel pane: controllare il tipo di pane e le salse."
+  "n": "Pane al sesamo del Tucano, lo stesso degli hamburger classici (Lantmännen: glutine, soia, sesamo). Carne: scheda del produttore da chiedere (alcuni burger hanno senape nelle spezie)."
  },
  "67": {
   "a": [
-   1
+   1,
+   6,
+   11
   ],
-  "n": "Servito nel pane: controllare il tipo di pane e le salse."
+  "n": "Pane al sesamo del Tucano, lo stesso degli hamburger classici (Lantmännen: glutine, soia, sesamo). Carne: scheda del produttore da chiedere (alcuni burger hanno senape nelle spezie)."
  },
  "68": {
   "a": [
@@ -509,7 +530,7 @@
    3,
    7
   ],
-  "n": "Prodotto pronto: controllare etichetta."
+  "n": "Fatto dal locale: formaggio (caseificio di Ancarano), impanatura con pangrattato e uovo."
  },
  "75": {
   "a": [
@@ -785,10 +806,9 @@
  "113": {
   "a": [
    1,
-   2,
    14
   ],
-  "n": "Impasto, cozze, vongole, seppie (molluschi). Messi i crostacei perché in cucina c'è il mix con mazzancolle/gamberetti: toglierli se non ci sono."
+  "n": "Impasto, seppie, cozze e vongole (molluschi), come la Mare e monti. Se nel mix ci sono gamberi o mazzancolle aggiungere 2."
  },
  "114": {
   "a": [
@@ -844,10 +864,10 @@
  "121": {
   "a": [
    1,
-   4,
-   7
+   7,
+   14
   ],
-  "n": "Impasto, mozzarella, pesce: specificare quale (se crostacei 2, molluschi 14)."
+  "n": "Impasto, mozzarella, seppie, cozze e vongole (molluschi). Porcini trifolati Viander: scheda da chiedere."
  },
  "122": {
   "a": [
@@ -925,9 +945,10 @@
   "a": [
    1,
    3,
+   6,
    7
   ],
-  "n": "Prodotto pronto: controllare etichetta (soia, frutta a guscio)."
+  "n": "Fatta dal locale come la cheesecake: biscotti pressati, Philadelphia, birra Guinness, cioccolato (soia). Uova e soia da etichetta dei biscotti."
  },
  "135": {
   "a": [
@@ -948,8 +969,10 @@
   "n": "Soufflé al cioccolato Traiteur de Paris: glutine, uova, soia, latte."
  },
  "137": {
-  "a": [],
-  "n": "Sorbetto: controllare etichetta (latte). Il cocco non è tra i 14 allergeni."
+  "a": [
+   7
+  ],
+  "n": "Sorbetti Magrini: scheda non trovata; quelli serviti nel frutto spesso contengono latte. Da confermare con la scheda Magrini."
  },
  "139": {
   "a": [],
@@ -1179,7 +1202,7 @@
    7,
    8
   ],
-  "n": "Base biscotto, formaggio. Nutella: nocciole, soia, latte. Fornitore della cheesecake da indicare."
+  "n": "Fatta dal locale: biscotti pressati (glutine; uova e soia da etichetta dei biscotti), Philadelphia (latte), birra Guinness (orzo), zucchero. Topping Nutella: nocciole, soia, latte; caramello Carte d'Or: latte."
  },
  "bibite:138": {
   "a": [],
