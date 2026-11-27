@@ -63,18 +63,66 @@ class GXM_Allergeni {
         return is_array($d) ? $d : [];
     }
 
+    /** Versione della bozza: se cresce, le voci non ancora verificate ripartono da quella nuova. */
+    const VERSIONE_BOZZA = 2;
+
+    /**
+     * Id usati da due prodotti diversi in due categorie (82 = Chicken Nuggets
+     * e pizza Gauguin, 138 = Cheesecake e Acqua): per loro la chiave e'
+     * `categoria:id`, altrimenti uno prende gli allergeni dell'altro.
+     */
+    private static function doppi() {
+        static $doppi = null;
+        if ($doppi !== null) return $doppi;
+        $conta = [];
+        foreach (GXM_Admin::items() as $cat) {
+            foreach ($cat['items'] as $it) {
+                if (!empty($it['isHeader'])) continue;
+                $id = (string) $it['id'];
+                $conta[$id] = ($conta[$id] ?? 0) + 1;
+            }
+        }
+        $doppi = [];
+        foreach ($conta as $id => $n) {
+            if ($n > 1) $doppi[$id] = true;
+        }
+        return $doppi;
+    }
+
+    public static function chiave($cat_id, $id) {
+        $id = (string) $id;
+        return isset(self::doppi()[$id]) ? $cat_id . ':' . $id : $id;
+    }
+
+    private static function voci_bozza() {
+        $voci = [];
+        foreach (self::bozza() as $id => $v) {
+            if ($id === '_info' || !is_array($v)) continue;
+            $voci[(string) $id] = array_values(array_map('intval', $v['a'] ?? []));
+        }
+        return $voci;
+    }
+
     public static function dati() {
         $d = get_option(self::OPTION, null);
         if (!is_array($d)) {
-            $voci = [];
-            foreach (self::bozza() as $id => $v) {
-                if ($id === '_info' || !is_array($v)) continue;
-                $voci[(string) $id] = array_values(array_map('intval', $v['a'] ?? []));
-            }
-            $d = ['voci' => $voci, 'verificati' => [], 'pubblicato' => false, 'aggiornato' => 0];
+            $d = ['voci' => self::voci_bozza(), 'verificati' => [], 'pubblicato' => false, 'aggiornato' => 0, 'bozza' => self::VERSIONE_BOZZA];
             update_option(self::OPTION, $d, false);
         }
-        $d += ['voci' => [], 'verificati' => [], 'pubblicato' => false, 'aggiornato' => 0];
+        $d += ['voci' => [], 'verificati' => [], 'pubblicato' => false, 'aggiornato' => 0, 'bozza' => 1];
+        if ((int) $d['bozza'] < self::VERSIONE_BOZZA) {
+            // Bozza nuova: le voci gia' verificate dal locale restano come sono,
+            // le altre prendono i valori nuovi. Le vecchie chiavi dei doppi
+            // ('82', '138') vanno via: valevano per due prodotti diversi.
+            foreach (self::voci_bozza() as $k => $a) {
+                if (empty($d['verificati'][$k])) $d['voci'][$k] = $a;
+            }
+            foreach (array_keys(self::doppi()) as $id) {
+                unset($d['voci'][$id], $d['verificati'][$id]);
+            }
+            $d['bozza'] = self::VERSIONE_BOZZA;
+            update_option(self::OPTION, $d, false);
+        }
         return $d;
     }
 
@@ -85,7 +133,7 @@ class GXM_Allergeni {
         $valid = [];
         foreach (GXM_Admin::items() as $cat) {
             foreach ($cat['items'] as $it) {
-                if (empty($it['isHeader'])) $valid[(string) $it['id']] = true;
+                if (empty($it['isHeader'])) $valid[self::chiave($cat['id'], $it['id'])] = true;
             }
         }
         $in = isset($_POST['all']) && is_array($_POST['all']) ? wp_unslash($_POST['all']) : [];
@@ -121,7 +169,7 @@ class GXM_Allergeni {
             foreach ($cat['items'] as $it) {
                 if (!empty($it['isHeader'])) continue;
                 $tot++;
-                if (!empty($d['verificati'][(string) $it['id']])) $ok++;
+                if (!empty($d['verificati'][self::chiave($cat['id'], $it['id'])])) $ok++;
             }
         }
         $visti = [];
@@ -173,10 +221,8 @@ class GXM_Allergeni {
                         <tbody>
                         <?php foreach ($cat['items'] as $it) :
                             if (!empty($it['isHeader'])) continue;
-                            $id = (string) $it['id'];
-                            // Stesso prodotto in due categorie: i campi solo la prima volta.
-                            $doppione = isset($visti[$id]);
-                            $visti[$id] = true;
+                            $id = self::chiave($cat['id'], $it['id']);
+                            $doppione = false;
                             $sel = $d['voci'][$id] ?? [];
                             $ver = !empty($d['verificati'][$id]);
                             ?>
@@ -272,7 +318,9 @@ class GXM_Allergeni {
         return;
       }
       var id = el.getAttribute('data-testid').replace('menu-item-','');
-      var a = D.voci[id];
+      // Id doppi (82, 138): chiave categoria:id, la categoria e' la section che contiene il piatto.
+      var sec = el.closest('section[id^="category-"]');
+      var a = (sec && D.voci[sec.id.replace('category-', '') + ':' + id]) || D.voci[id];
       if (!a || !a.length) return;
       var box = el.firstElementChild || el;
       var r = document.createElement('div');
